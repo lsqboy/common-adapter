@@ -3,25 +3,26 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'common-adapter'
 
-    publishedGroupId = 'com.lsqboy.common_adapter'
+    publishedGroupId = 'com.lsqboy.common-adapter'
     libraryName = 'common-adapter'
     artifact = 'common-adapter'
 
     libraryDescription = 'A common adapter'
 
-    siteUrl = 'https://github.com/nuuneoi/FBLikeAndroid'
-    gitUrl = 'https://github.com/nuuneoi/FBLikeAndroid.git'
+    siteUrl = 'https://github.com/lsqboy/common-adapter'
+    gitUrl = 'https://github.com/lsqboy/common-adapter.git'
 
     libraryVersion = '0.0.1'
 
-    developerId = 'nuuneoi'
-    developerName = 'Sittiphol Phanvilai'
-    developerEmail = 'sittiphol@gmail.com'
+    developerId = 'lsqboy'
+    developerName = 'lsqboy_lian'
+    developerEmail = 'g.lsqboy@gmail.com'
 
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 }
+
 android {
     compileSdkVersion 25
     buildToolsVersion "24.0.2"
@@ -52,3 +53,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
