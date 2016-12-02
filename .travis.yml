@@ -7,13 +7,10 @@ android:
   components:
   - platform-tools
   - tools
-  - build-tools-24.0.0
-  - android-24
+  - build-tools-24.0.2
+  - android-25
   - extra
   - addon
-before_script:
-script:
-- "./gradlew check"
 deploy:
   provider: releases
   api_key:
@@ -31,7 +28,3 @@ branches:
 notifications:
   email: false
 sudo: false
-cache:
-  directories:
-  - "$HOME/.gradle/"
-  - "$HOME/.android/"
