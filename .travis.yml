@@ -13,8 +13,9 @@ android:
   - addon
   - extra-android-support
   - extra-android-m2repository
+before_script:
 script:
-  - chmod +x ./gradlew
+- "./gradlew check"
 deploy:
   provider: releases
   api_key:
@@ -32,3 +33,7 @@ branches:
 notifications:
   email: false
 sudo: false
+cache:
+  directories:
+  - "$HOME/.gradle/"
+  - "$HOME/.android/"
