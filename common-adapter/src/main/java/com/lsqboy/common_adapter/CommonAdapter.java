@@ -21,6 +21,13 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     protected List<T> mDatas;
     protected final int mItemLayoutId;
 
+    /**
+     * CommonAdapter
+     *
+     * @param context context
+     * @param mDatas data
+     * @param itemLayoutId itemLayoutId
+     */
     public CommonAdapter(Context context, List<T> mDatas, int itemLayoutId) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(mContext);
@@ -28,16 +35,33 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         this.mItemLayoutId = itemLayoutId;
     }
 
+    /**
+     * getCount
+     *
+     * @return Count
+     */
     @Override
     public int getCount() {
         return mDatas.size();
     }
 
+    /**
+     * getItem
+     *
+     * @param position position
+     * @return T
+     */
     @Override
     public T getItem(int position) {
         return mDatas.get(position);
     }
 
+    /**
+     * getItemId
+     *
+     * @param position position
+     * @return ItemId
+     */
     @Override
     public long getItemId(int position) {
         return position;

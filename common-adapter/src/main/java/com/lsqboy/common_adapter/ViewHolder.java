@@ -38,12 +38,12 @@ public class ViewHolder {
     /**
      * 拿到一个ViewHolder对象
      *
-     * @param context
-     * @param convertView
-     * @param parent
-     * @param layoutId
-     * @param position
-     * @return
+     * @param context context
+     * @param convertView convertView
+     * @param parent parent
+     * @param layoutId layoutId
+     * @param position position
+     * @return ViewHolder
      */
     public static ViewHolder get(Context context, View convertView,
                                  ViewGroup parent, int layoutId, int position) {
@@ -60,8 +60,8 @@ public class ViewHolder {
     /**
      * 通过控件的Id获取对于的控件，如果没有则加入views
      *
-     * @param viewId
-     * @return
+     * @param viewId viewId
+     * @return <T extends View>
      */
     @SuppressWarnings("unchecked")
     public <T extends View> T getView(int viewId) {
@@ -76,9 +76,9 @@ public class ViewHolder {
     /**
      * 为TextView设置字符串
      *
-     * @param viewId
-     * @param text
-     * @return
+     * @param viewId viewId
+     * @param text text
+     * @return ViewHolder
      */
     public ViewHolder setText(int viewId, String text) {
         TextView view = getView(viewId);
@@ -89,9 +89,9 @@ public class ViewHolder {
     /**
      * 为ImageView设置图片
      *
-     * @param viewId
-     * @param drawableId
-     * @return
+     * @param viewId viewId
+     * @param drawableId drawableId
+     * @return ViewHolder
      */
     public ViewHolder setImageResource(int viewId, int drawableId) {
         ImageView view = getView(viewId);
@@ -103,9 +103,9 @@ public class ViewHolder {
     /**
      * 为ImageView设置图片
      *
-     * @param viewId
-     * @param bm
-     * @return
+     * @param viewId viewId
+     * @param bm bm
+     * @return ViewHolder
      */
     public ViewHolder setImageBitmap(int viewId, Bitmap bm) {
         ImageView view = getView(viewId);
@@ -116,9 +116,9 @@ public class ViewHolder {
     /**
      * 为ImageView设置图片
      *
-     * @param viewId
-     * @param url
-     * @return
+     * @param viewId viewId
+     * @param url url
+     * @return ViewHolder
      */
     public ViewHolder setImageByUrl(int viewId, String url) {
         ImageView view = getView(viewId);
@@ -126,6 +126,11 @@ public class ViewHolder {
         return this;
     }
 
+    /**
+     * getPosition
+     *
+     * @return position
+     */
     public int getPosition() {
         return mPosition;
     }
