@@ -1,0 +1,37 @@
+language: android
+jdk: oraclejdk8
+env:
+  matrix:
+  - ANDROID_TARGET=android-23  ANDROID_ABI=x86_64
+android:
+  components:
+  - platform-tools
+  - tools
+  - build-tools-24.0.0
+  - android-24
+  - extra
+  - addon
+before_script:
+script:
+- "./gradlew check"
+deploy:
+  provider: releases
+  api_key:
+    secure: 41a9c521d37404db6f4192f9cae125f0ffa3410c
+  file_glob: true
+  file: "*/build/outputs/aar/*-release.aar"
+  skip_cleanup: true
+  on:
+    tags: true
+after_deploy:
+- "./gradlew library:bintrayUpload"
+branches:
+  except:
+  - gh-pages
+notifications:
+  email: false
+sudo: false
+cache:
+  directories:
+  - "$HOME/.gradle/"
+  - "$HOME/.android/"
