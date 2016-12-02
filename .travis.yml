@@ -11,6 +11,10 @@ android:
   - android-25
   - extra
   - addon
+  - extra-android-support
+  - extra-android-m2repository
+script:
+  - chmod +x ./gradlew
 deploy:
   provider: releases
   api_key:

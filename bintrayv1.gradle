@@ -24,16 +24,6 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
-gradle.projectsEvaluated {
-    connectedDebugAndroidTest.finalizedBy AndroidShowTestResults
-}
-
-tasks.whenTaskAdded { task ->
-    if (task.name == 'connectedDebugAndroidTest') {
-        task.finalizedBy AndroidShowTestResults
-    }
-}
-
 artifacts {
     archives javadocJar
     archives sourcesJar
