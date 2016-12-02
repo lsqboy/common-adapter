@@ -20,9 +20,11 @@ deploy:
   provider: releases
   api_key:
     secure: xoN1lzhWK0cgFmpWnRAyhLNCWTgcC4lqEMXEOJH2naLG6hDYfcY1cG05ULN+UafXirfyNzN9yoJZjz/6MzxmsNw0kOzvRdl9CtWFlfIWJrT220bmZNgFPDrwT93Iu2yU+m965QYlaU8wRnK/Ip+cIaVD193E8rUCKzq6JF5PTnB2vDRIPi7hFPjEb7nupK5Bx/PHE6mPW72CmfxgwOwk9CEQJyEMv8RAKG+VARNFoyPaxAfmbYnIjM5x1c25ETA8O54A+DyP6+wLKK4Rq+/KII5QispzzK2AdnCQzdFH7YtzjFTAO2sGuJ5s9EMFd6FBHl6dsd9k909ql4SqWHoWAUwkEN5ZBsi/XkuDTIVuA7Z8pR4J9U9Q7kdKjccfLIHhB2nDqhwAMJ4qjSbchwR6qJ49wSqlkxC2VaE1+bjsLIUEoHzuC22ggS5juql9S98yO3H6kmdJtudleZu2GNxPvMBovxq8Jp5dsgg0l3yJNr7AyTVfmooVw0NnxqxcRWp9KtccqxvRKjMoZUeUK/pNMFA4PD9ZZ3wIVa0k2POhaQsQePYayjiV7Nu9Qp+v6UckYXKNmqFKCYvJi+4MWREOCrPVLaLQaH+8BRWsoA0DVw7qRan2BfzITk3e4sJvE73ntz95DNUwpbd/zCJO9dt8qGusWZvVGgLap5c1ZVBALFI=
+  file_glob: true
   file: "*/build/outputs/aar/*-release.aar"
+  skip_cleanup: true
   on:
-    repo: lsqboy/common-adapter
+    tags: true
 after_deploy:
 - "./gradlew library:bintrayUpload"
 branches:
@@ -35,4 +37,5 @@ cache:
   directories:
   - "$HOME/.gradle/"
   - "$HOME/.android/"
+  - "$HOME/.m2/"
 
