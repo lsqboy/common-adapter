@@ -61,7 +61,7 @@ public class ViewHolder {
      * 通过控件的Id获取对于的控件，如果没有则加入views
      *
      * @param viewId viewId
-     * @return <T extends View>
+     * @return T
      */
     @SuppressWarnings("unchecked")
     public <T extends View> T getView(int viewId) {
